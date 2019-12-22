@@ -23,6 +23,11 @@ const productSchema = new Schema({
     type: Array,
     required: [true, 'Product images are required']
   },
+  images_cloudinary: {
+    type: Array,
+    default: [],
+    required: [true, 'Product images are required']
+  },
   description: {
     type: String,
     maxlength: 200
