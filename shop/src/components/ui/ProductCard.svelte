@@ -1,5 +1,5 @@
 <script>
-  export let name, price;
+  export let name, price, url;
 </script>
 
 <style>
@@ -130,7 +130,7 @@
 <div class="product-card">
   <div class="badge">Hot</div>
   <div class="product-tumb">
-    <img src="https://i.imgur.com/xdbHo4E.png" alt="" />
+    <img src={url} alt="" />
   </div>
   <div class="product-details">
     <span class="product-catagory">Shoes</span>

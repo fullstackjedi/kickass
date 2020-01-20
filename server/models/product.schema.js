@@ -23,10 +23,9 @@ const productSchema = new Schema({
     type: Array,
     required: [true, 'Product images are required']
   },
-  images_cloudinary: {
+  cloudURLs: {
     type: Array,
-    default: [],
-    required: [true, 'Product images are required']
+    default: []
   },
   description: {
     type: String,

@@ -32,6 +32,30 @@ export const upload = multer({
   fileFilter: multerFilter
 })
 
+export const cloudUpload = function (req, res, next) {
+  if (!req.files) throw new Error('Images are required');
+  const cloudURLs = [];
+
+  const images = req.files.map(item => item.path)
+
+  images.forEach(image => {
+    cloudinary.v2.uploader.upload(image, {
+      use_filename: true,
+      folder: 'kickass/products',
+      unique_filename: false,
+    }, (error, result) => {
+      if (!error) cloudURLs.push(result.secure_url)
+      // FIXME1.0 Figure out how to save product ONLY after cloudinary upload
+    });
+  })
+
+
+
+  req.cloudURLs = cloudURLs;
+
+  next()
+}
+
 
 
 export const getAllProducts = async (req, res, next) => {
@@ -47,25 +71,20 @@ export const getAllProducts = async (req, res, next) => {
 
 export const addProduct = async (req, res, next) => {
   const { name, price, discount, size, color, brand, description } = req.body;
-  const images_cloudinary = [];
-
-  if (!req.files) throw new Error('Images are required');
 
   const images = req.files.map(item => item.path)
 
-  images.forEach(image => {
-    cloudinary.v2.uploader.upload(image, (error, result) => {
-      console.log(error, result)
-      if (!error) images_cloudinary.push(result.secure_url)
-    });
-  })
+  // Temporary fix for FIXME1.0
+  const cloudURLs = req.files.map(item => `https://res.cloudinary.com/emmaxio/image/upload/kickass/products/${item.filename}`)
+
+  if (!req.files) throw new Error('Images are required');
 
   const product = await Product.create({
     name,
     price,
     discount,
     images,
-    images_cloudinary,
+    cloudURLs,
     size,
     color,
     brand,

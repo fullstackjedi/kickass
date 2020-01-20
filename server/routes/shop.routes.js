@@ -1,11 +1,11 @@
 import express from 'express';
-import { getAllProducts, addProduct, getProduct, upload } from '../controllers/shop.controller.js'
+import { getAllProducts, addProduct, getProduct, upload, cloudUpload } from '../controllers/shop.controller.js'
 
 const router = express.Router()
 
 router.get('/products', getAllProducts);
 
-router.post('/products', upload.array('image', 3), addProduct)
+router.post('/products', upload.array('image', 3), cloudUpload, addProduct)
 
 router.get('/products/:id', getProduct);
 

@@ -14,6 +14,8 @@
 
 </style>
 
+<svelte:head />
+
 <div class="container">
   <div class="row">
     {#each products as product}

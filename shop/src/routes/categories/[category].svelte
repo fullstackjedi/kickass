@@ -49,6 +49,7 @@
     <div class="product-grid">
       {#each products as product (product._id)}
         <ProductCard
+          url={product.cloudURLs[0]}
           name={product.name}
           price={(product.price / 360).toFixed(2)} />
       {/each}

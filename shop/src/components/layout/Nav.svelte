@@ -41,6 +41,12 @@
         <div
           class="dropdown-menu dropdown-primary"
           aria-labelledby="navbarDropdownMenuLink">
+          <a
+            style="border-bottom: 1px solid rgba(0,0,0,.5)"
+            class="dropdown-item"
+            href="/categories">
+            All
+          </a>
           <a class="dropdown-item" href="/categories/men">Men</a>
           <a class="dropdown-item" href="/categories/women">Women</a>
         </div>
