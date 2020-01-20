@@ -1,6 +1,6 @@
 {
-  "name": "TODO",
-  "description": "TODO",
+  "name": "kickass",
+  "description": "Ecommerce store for sneakers",
   "version": "0.0.1",
   "scripts": {
     "dev": "sapper dev",

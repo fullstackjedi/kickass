@@ -4,6 +4,8 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
 
+require('dotenv').config();
+
 // Routes
 import shopRouter from './routes/shop.routes.js'
 

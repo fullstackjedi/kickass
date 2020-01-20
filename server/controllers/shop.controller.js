@@ -4,9 +4,9 @@ import uuid from 'uuid';
 import cloudinary from 'cloudinary';
 
 cloudinary.config({
-  cloud_name: 'emmaxio',
-  api_key: '171358665139949',
-  api_secret: 'WtKsZ538gZOp6bsvvNw-2Ag0ZLk'
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECERET
 });
 
 const multerStorage = multer.diskStorage({
