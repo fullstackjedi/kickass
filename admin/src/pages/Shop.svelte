@@ -41,7 +41,7 @@
   </div>
 </div>
 
-<!-- Central Modal Small -->
+<!-- Add Product Modal -->
 <div
   class="modal fade"
   id="addProductModal"

@@ -4,7 +4,9 @@
   import axios from "axios";
 
   onMount(() => {
-    ClassicEditor.create(document.querySelector("#editor"))
+    ClassicEditor.create(document.querySelector("#editor"), {
+      toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ]
+    })
       .then(editor => {
         window.editor = editor;
       })
