@@ -11,9 +11,6 @@
     padding: 0;
   }
 
-  body {
-    font-family: "Roboto", sans-serif;
-  }
   a {
     text-decoration: none;
   }
@@ -38,17 +35,13 @@
   }
 
   .product-tumb {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 300px;
-    padding: 50px;
+    height: 380px;
     background: #f0f0f0;
   }
 
   .product-tumb img {
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: 100%;
   }
 
   .product-details {

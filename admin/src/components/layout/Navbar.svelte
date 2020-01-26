@@ -35,7 +35,7 @@
           <a use:link class="nav-link" href="/products">Products</a>
         </li>
         <li class="nav-item">
-          <a use:link class="nav-link" href="/about">About</a>
+          <a use:link class="nav-link" href="/brands">Brands</a>
         </li>
 
       </ul>

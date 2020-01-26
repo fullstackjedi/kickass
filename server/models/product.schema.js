@@ -27,13 +27,18 @@ const productSchema = new Schema({
     type: Array,
     default: []
   },
+  category: {
+    type: String,
+    required: true,
+    enum: ['men', 'women', 'unisex']
+  },
   description: {
     type: String,
     maxlength: 200
   },
   color: String,
   brand: {
-    type: String,
+    type: Schema.Types.ObjectId,
     required: true
   }
 })

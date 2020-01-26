@@ -1,0 +1,11 @@
+Relations (One to One, One to Many & Many to Many)
+  Add brands
+Auth
+  Login 
+  Sign up
+Local Storage
+  Add to Cart
+Refactoring
+  Product Model Changes
+    Change discount to discountPrice
+    Change Color & Size fields to Arrays

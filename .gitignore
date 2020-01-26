@@ -2,4 +2,8 @@
 /admin/node_modules
 /shop/node_modules
 
+/server/images
+
+notes.txt
+
 .env

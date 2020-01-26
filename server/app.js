@@ -4,7 +4,11 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
 
-require('dotenv').config();
+// import dotenv from 'dotenv';
+
+// dotenv.config({ path: './' })
+
+//require('dotenv').config();
 
 // Routes
 import shopRouter from './routes/shop.routes.js'
@@ -20,7 +24,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 // Use Routes
-app.use(shopRouter)
+app.use('/products', shopRouter)
 
 app.listen(PORT, () => {
   console.log(`Server started on ${PORT}`);
