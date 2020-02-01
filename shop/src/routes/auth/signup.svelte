@@ -10,8 +10,7 @@
     confirmPassword: ""
   };
 
-  async function signup() {
-    console.log("Sent");
+  const signup = async () => {
     const response = await axios.post(
       "http://localhost:1000/auth/user/signup",
       userDetails
@@ -29,7 +28,7 @@
 
       window.location.replace("/");
     }
-  }
+  };
 </script>
 
 <div class="container">
@@ -94,9 +93,9 @@
       <!-- Sign up button -->
       <button
         on:click={signup}
-        class="btn btn-info my-4 btn-block"
+        class="btn text-white my-4 btn-block mdb-color"
         type="button">
-        Sign in
+        Sign Up
       </button>
 
       <!-- Social register -->

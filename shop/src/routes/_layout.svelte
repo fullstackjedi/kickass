@@ -14,7 +14,7 @@
   }
 </style>
 
-<AuthObserver />
+<!-- <AuthObserver /> -->
 
 <Nav {segment} />
 
