@@ -1,5 +1,5 @@
 <script>
-  import { commafy } from "../../utils/helperfunctions";
+  import commafy from "commafy";
 
   export let product;
 </script>

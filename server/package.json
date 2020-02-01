@@ -6,18 +6,21 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon app.js"
+    "dev": "nodemon -r dotenv/config app.js"
   },
   "author": "Aneri Emmax",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "cloudinary": "^1.18.1",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.8.1",
     "multer": "^1.4.2",
-    "uuid": "^3.3.3"
+    "uuid": "^3.3.3",
+    "validator": "^12.2.0"
   }
 }

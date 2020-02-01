@@ -1,4 +1,6 @@
 <script>
+  import AuthObserver from "../components/AuthObserver.svelte";
+
   import Nav from "../components/layout/Nav.svelte";
   import Footer from "../components/layout/Footer.svelte";
 
@@ -11,6 +13,8 @@
     min-height: 90vh;
   }
 </style>
+
+<AuthObserver />
 
 <Nav {segment} />
 

@@ -104,7 +104,7 @@ export const addProduct = async (req, res, next) => {
   // Temporary fix for FIXME1.0
   const cloudURLs = req.files.map(item => `https://res.cloudinary.com/emmaxio/image/upload/c_crop,h_500,w_500/kickass/products/${item.filename}`)
 
-  if (!req.files) throw new Error('Images are required');
+  if (req.files.length < 1) throw new Error('Images are required');
 
   const product = await Product.create({
     name,

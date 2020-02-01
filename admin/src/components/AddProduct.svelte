@@ -2,10 +2,20 @@
   import { onMount } from "svelte";
   import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
   import axios from "axios";
+  import jQuery from "jquery";
 
   onMount(() => {
     ClassicEditor.create(document.querySelector("#editor"), {
-      toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ]
+      toolbar: [
+        "heading",
+        "|",
+        "bold",
+        "italic",
+        "link",
+        "bulletedList",
+        "numberedList",
+        "blockQuote"
+      ]
     })
       .then(editor => {
         window.editor = editor;
@@ -17,7 +27,6 @@
 
   function addProduct() {
     const bodyFormData = new FormData(document.getElementById("addProduct"));
-    console.log(bodyFormData);
 
     axios({
       method: "post",
@@ -26,19 +35,20 @@
       headers: { "Content-Type": "multipart/form-data" }
     })
       .then(function(response) {
-        //handle success
-        console.log(response);
+        location.reload();
       })
       .catch(function(response) {
         //handle error
-        console.log(response);
+        Snackbar.show({
+          pos: "bottom-right",
+          text: "Error uploading Product"
+        });
       });
   }
 </script>
 
 <form
   on:submit|preventDefault={addProduct}
-  method="POST"
   class="text-center p-2"
   id="addProduct">
 

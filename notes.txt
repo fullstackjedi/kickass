@@ -1,11 +1,36 @@
 Relations (One to One, One to Many & Many to Many)
-  Add brands
+  Add brands ✔️
+
+Admin Changes
+  Create Add Product Modal ✔️
+  Style Product Card ✔️
+  Fix Routing ✔️
+
 Auth
-  Login 
-  Sign up
+  Backend
+    Login
+      Make username unique in schema
+    Sign up
+      Delete some fields before sending user object to the frontend
+      Complete frontend flow
+  Frontend
+    Create Page
+    Create User Store
+    Build AuthObserver
+
+
+Lazy Load images
+  https://apoorv.pro/lozad.js/
+  
 Local Storage
   Add to Cart
 Refactoring
   Product Model Changes
     Change discount to discountPrice
     Change Color & Size fields to Arrays
+
+Resources
+  https://dev.to/nedsoft/central-error-handling-in-express-3aej
+  https://medium.com/swlh/jwt-authentication-authorization-in-nodejs-express-mongodb-rest-apis-2019-ad14ec818122
+  Algolia
+

@@ -1,26 +1,17 @@
-import express from 'express';
-import User from '../models/user.schema.js';
+import express from "express";
+
+import {
+  signup,
+  login,
+  logout,
+  logoutAll
+} from "../controllers/auth.controller.js";
 
 const router = express.Router();
 
-router.post('/auth/user/signup', async (req, res, next) => {
-  const { firstName, lastName, username, email, password, confirmPassword } = req.body;
+router.post("/user/signup", signup);
+router.post("/user/login", login);
+router.post("/user/logout", logout);
+router.post("/user/logout/all", logoutAll);
 
-  const user = await User.create({
-    name: {
-      firstName,
-      lastName,
-    },
-    userName,
-    email,
-    password,
-    confirmPassword
-  });
-
-  res.status(201).json({
-    status: 'success',
-    data: {
-      user
-    }
-  })
-})
+export default router;

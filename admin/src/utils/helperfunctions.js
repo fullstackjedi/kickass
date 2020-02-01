@@ -1,3 +1,4 @@
+
 export function commafy(num) {
   var str = num.toString().split('.');
   if (str[0].length >= 5) {
@@ -6,5 +7,5 @@ export function commafy(num) {
   if (str[1] && str[1].length >= 5) {
     str[1] = str[1].replace(/(\d{3})/g, '$1 ');
   }
-  return str.join('.');
+  return `₦${str.join('.')}`;
 }
