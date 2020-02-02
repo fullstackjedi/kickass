@@ -13,10 +13,8 @@ export const signup = async (req, res) => {
   console.log(req.body);
 
   const user = await User.create({
-    name: {
-      firstname,
-      lastname
-    },
+    firstname,
+    lastname,
     username,
     email,
     password,
@@ -24,10 +22,6 @@ export const signup = async (req, res) => {
   });
 
   const token = await user.generateAuthToken();
-
-  delete user.password;
-  delete user.confirmPassword;
-  delete user.tokens;
 
   res.status(201).json({
     status: "success",
@@ -40,6 +34,8 @@ export const signup = async (req, res) => {
 
 export const login = async (req, res) => {
   const { username, password } = req.body;
+
+  console.log(req.body);
 
   const user = await User.findByCredentials(username, password);
   if (!user) {

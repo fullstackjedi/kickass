@@ -1,3 +1,26 @@
+<style>
+  .cart-wrapper {
+    position: relative;
+  }
+
+  .cart-link:hover + .cart-box {
+    display: block;
+    transform: translateY(0);
+  }
+
+  .cart-box {
+    position: absolute;
+    background: rebeccapurple;
+    width: 300px;
+    height: 300px;
+    left: -250px;
+    z-index: 2;
+    display: block;
+    transform: translateY(-300px);
+    transition: 1s;
+  }
+</style>
+
 <!--Navbar-->
 <nav class="navbar navbar-expand-lg navbar-dark mdb-color">
 
@@ -69,11 +92,12 @@
     </form>
 
     <ul class="navbar-nav ml-auto nav-flex-icons">
-      <li class="nav-item">
-        <a class="nav-link waves-effect waves-light">
+      <li class="nav-item cart-wrapper">
+        <a class="nav-link waves-effect waves-light cart-link">
           1
-          <i class="fas fa-envelope" />
+          <i class="fas fa-cart-arrow-down" />
         </a>
+        <div class="cart-box" />
       </li>
       <li class="nav-item avatar dropdown">
         <a
@@ -99,6 +123,5 @@
     </ul>
   </div>
   <!-- Collapsible content -->
-
 </nav>
 <!--/.Navbar-->

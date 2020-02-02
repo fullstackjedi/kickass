@@ -1,4 +1,5 @@
 <script>
+  import { goto } from "@sapper/app";
   import axios from "axios";
 
   let userDetails = {
@@ -24,9 +25,9 @@
         token: data.token
       };
 
-      window.localStorage.setItem("user", JSON.stringify(data.user));
+      localStorage.setItem("user", JSON.stringify(user));
 
-      window.location.replace("/");
+      goto("/");
     }
   };
 </script>

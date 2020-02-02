@@ -9,12 +9,12 @@ Admin Changes
 Auth
   Backend
     Login
-      Make username unique in schema
+      Make username unique in schema ✔️
     Sign up
       Delete some fields before sending user object to the frontend
-      Complete frontend flow
+      Complete frontend flow ✔️
   Frontend
-    Create Page
+    Create Page ✔️
     Create User Store
     Build AuthObserver
 
@@ -24,6 +24,9 @@ Lazy Load images
   
 Local Storage
   Add to Cart
+  
+Brands Page
+
 Refactoring
   Product Model Changes
     Change discount to discountPrice

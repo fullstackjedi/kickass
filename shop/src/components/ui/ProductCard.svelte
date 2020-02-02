@@ -15,7 +15,7 @@
     text-decoration: none;
   }
   .product-card {
-    width: 380px;
+    width: 316px;
     position: relative;
     box-shadow: 0 2px 7px #dfdfdf;
     margin: 50px auto;
@@ -45,7 +45,7 @@
   }
 
   .product-details {
-    padding: 30px;
+    padding: 10px;
   }
 
   .product-catagory {
@@ -75,6 +75,9 @@
     font-size: 15px;
     line-height: 22px;
     margin-bottom: 18px;
+  }
+
+  .product-details a {
     color: #999;
   }
 
@@ -127,9 +130,9 @@
   </div>
   <div class="product-details">
     <span class="product-catagory">Shoes</span>
-    <h4>
+    <p>
       <a href="/">{name}</a>
-    </h4>
+    </p>
     <div class="product-bottom-details">
       <div class="product-price">
         <small>$96.00</small>

@@ -12,6 +12,10 @@
     padding: 3rem;
     min-height: 90vh;
   }
+
+  .container-fluid {
+    max-width: 80vw;
+  }
 </style>
 
 <!-- <AuthObserver /> -->
@@ -19,7 +23,7 @@
 <Nav {segment} />
 
 <main>
-  <div class="container pt-5">
+  <div class="container-fluid pt-5">
     <slot />
   </div>
 </main>

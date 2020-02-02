@@ -6,17 +6,15 @@ import jwt from "jsonwebtoken";
 const { Schema } = mongoose;
 
 const userSchema = new Schema({
-  name: {
-    firstname: {
-      type: String,
-      required: [true, "Firstname is required"],
-      trim: true
-    },
-    lastname: {
-      type: String,
-      required: [true, "Lastname is required"],
-      trim: true
-    }
+  firstname: {
+    type: String,
+    required: [true, "Firstname is required"],
+    trim: true
+  },
+  lastname: {
+    type: String,
+    required: [true, "Lastname is required"],
+    trim: true
   },
   username: {
     type: String,
@@ -37,10 +35,12 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: [true, "Password is required"],
-    minlength: 7
+    minlength: 7,
+    select: false
   },
   confirmPassword: {
-    type: String
+    type: String,
+    select: false
   },
   tokens: [
     {
@@ -76,10 +76,12 @@ userSchema.methods.generateAuthToken = async function() {
 userSchema.statics.findByCredentials = async (email, password) => {
   const user = await User.findOne({
     $or: [{ email: email }, { username: email }]
-  });
+  }).select("+password");
+
   if (!user) {
     throw new Error("Invalid login details");
   }
+  console.log(user);
 
   const isPasswordMatch = await bcrypt.compare(password, user.password);
   if (!isPasswordMatch) {
