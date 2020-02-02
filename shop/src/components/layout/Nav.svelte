@@ -14,10 +14,10 @@
     width: 300px;
     height: 300px;
     left: -250px;
-    z-index: 2;
+    z-index: -1;
     display: block;
     transform: translateY(-300px);
-    transition: 1s;
+    transition: all 1s;
   }
 </style>
 

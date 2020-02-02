@@ -35,8 +35,6 @@ export const signup = async (req, res) => {
 export const login = async (req, res) => {
   const { username, password } = req.body;
 
-  console.log(req.body);
-
   const user = await User.findByCredentials(username, password);
   if (!user) {
     return res

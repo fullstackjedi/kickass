@@ -20,6 +20,7 @@
     box-shadow: 0 2px 7px #dfdfdf;
     margin: 50px auto;
     background: #fafafa;
+    z-index: -2;
   }
 
   .badge {
