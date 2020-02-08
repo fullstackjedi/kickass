@@ -1,6 +1,7 @@
 import multer from "multer";
 import uuid from "uuid";
 import cloudinary from "cloudinary";
+import slugify from "slugify";
 
 import Product from "../models/product.schema.js";
 import Brand from "../models/brand.schema.js";
@@ -118,6 +119,7 @@ export const addProduct = async (req, res, next) => {
 
   const product = await Product.create({
     name,
+    slug: slugify(name.toLowerCase()),
     price,
     discount,
     images,
@@ -138,9 +140,9 @@ export const addProduct = async (req, res, next) => {
 };
 
 export const getProduct = async (req, res, next) => {
-  const { id } = req.params;
+  const { slug } = req.params;
 
-  const product = await Product.findById(id);
+  const product = await Product.findOne({ slug });
 
   res.json({
     status: "success",

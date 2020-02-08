@@ -1,5 +1,5 @@
 <script>
-  export let name, price, url;
+  export let name, price, url, slug;
 </script>
 
 <style>
@@ -20,7 +20,6 @@
     box-shadow: 0 2px 7px #dfdfdf;
     margin: 50px auto;
     background: #fafafa;
-    z-index: -2;
   }
 
   .badge {
@@ -127,12 +126,15 @@
 <div class="product-card">
   <div class="badge">Hot</div>
   <div class="product-tumb">
-    <img src={url} alt="" />
+    <a href={slug}>
+      <img src={url} alt={name} />
+    </a>
   </div>
   <div class="product-details">
     <span class="product-catagory">Shoes</span>
+
     <p>
-      <a href="/">{name}</a>
+      <a href={`/${slug}`}>{name}</a>
     </p>
     <div class="product-bottom-details">
       <div class="product-price">

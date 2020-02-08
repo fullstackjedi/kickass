@@ -1,14 +1,27 @@
-import express from 'express';
-import { getAllProducts, addProduct, getProduct, addBrand, uploadProductImages, uploadBrandImage, cloudUpload } from '../controllers/shop.controller.js'
+import express from "express";
+import {
+  getAllProducts,
+  addProduct,
+  getProduct,
+  addBrand,
+  uploadProductImages,
+  uploadBrandImage,
+  cloudUpload
+} from "../controllers/shop.controller.js";
 
-const router = express.Router()
+const router = express.Router();
 
-router.get('/', getAllProducts);
+router.get("/", getAllProducts);
 
-router.post('/', uploadProductImages.array('image', 3), cloudUpload, addProduct)
+router.post(
+  "/",
+  uploadProductImages.array("image", 3),
+  cloudUpload,
+  addProduct
+);
 
-router.get('/:id', getProduct);
+router.get("/:slug", getProduct);
 
-router.post('/brand', uploadBrandImage.single('image'), addBrand);
+router.post("/brand", uploadBrandImage.single("image"), addBrand);
 
 export default router;

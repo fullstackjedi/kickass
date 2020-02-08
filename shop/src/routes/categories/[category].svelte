@@ -51,7 +51,8 @@
         <ProductCard
           url={product.cloudURLs[0]}
           name={product.name}
-          price={(product.price / 360).toFixed(2)} />
+          price={(product.price / 360).toFixed(2)}
+          slug={product.slug} />
       {/each}
     </div>
   </div>

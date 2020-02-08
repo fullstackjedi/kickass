@@ -1,15 +1,19 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const { Schema } = mongoose;
 
 const productSchema = new Schema({
   name: {
     type: String,
-    required: [true, 'Product name is required']
+    required: [true, "Product name is required"]
+  },
+  slug: {
+    type: String,
+    required: [true, "Slug is required"]
   },
   price: {
     type: Number,
-    required: [true, 'Product price is required']
+    required: [true, "Product price is required"]
   },
   discount: {
     type: Number,
@@ -17,11 +21,11 @@ const productSchema = new Schema({
   },
   size: {
     type: Number,
-    required: [true, 'Product size is required']
+    required: [true, "Product size is required"]
   },
   images: {
     type: Array,
-    required: [true, 'Product images are required']
+    required: [true, "Product images are required"]
   },
   cloudURLs: {
     type: Array,
@@ -30,7 +34,7 @@ const productSchema = new Schema({
   category: {
     type: String,
     required: true,
-    enum: ['men', 'women', 'unisex']
+    enum: ["men", "women", "unisex"]
   },
   description: {
     type: String,
@@ -41,6 +45,6 @@ const productSchema = new Schema({
     type: Schema.Types.ObjectId,
     required: true
   }
-})
+});
 
-export default mongoose.model('Product', productSchema);
+export default mongoose.model("Product", productSchema);
