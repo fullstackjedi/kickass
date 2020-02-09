@@ -12,6 +12,7 @@
 <style>
   .cart-wrapper {
     position: relative;
+    z-index: 5;
   }
 
   .cart-box {
@@ -120,7 +121,9 @@
             </div>
 
             <div class="checkout-wrapper">
-              <button class="btn btn-secondary btn-block">CHECKOUT</button>
+              <a href="/checkout" class="btn btn-secondary btn-block">
+                CHECKOUT
+              </a>
             </div>
 
           </div>
