@@ -1,0 +1,81 @@
+<script>
+  import { onMount } from "svelte";
+
+  let cart;
+
+  function truncateString(str, num) {
+    if (str.length <= num) return str;
+
+    return str.slice(0, num) + "...";
+  }
+
+  onMount(() => {
+    cart = localStorage.getItem("cart");
+
+    if (cart) {
+      cart = JSON.parse(cart);
+    }
+  });
+</script>
+
+<style>
+  .cart-link:hover + .cart-box {
+    display: block;
+    transform: translateY(20px);
+  }
+
+  .cart-box {
+    position: absolute;
+    background: #fff;
+    width: 300px;
+    height: 300px;
+    left: -250px;
+    z-index: -1;
+    display: block;
+    transform: translateY(-300px);
+    transition: all 1s;
+  }
+
+  .product-card {
+    width: 90%;
+    margin: 5px auto;
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+  }
+
+  .product-img {
+    width: 40%;
+  }
+
+  .product-img img {
+    max-width: 100%;
+  }
+
+  .product-details {
+    width: 55%;
+  }
+</style>
+
+{#if !cart}
+  <p>No Items in your Cart</p>
+{:else}
+  {#each cart as item}
+    <div class="cart-box">
+      <div class="product-card">
+        <div class="product-img">
+          <img src={item.cloudURLs[0]} alt="" />
+        </div>
+        <div class="product-details">
+          <p>{item.price}</p>
+          <p>{truncateString(item.name, 15)}</p>
+          <div class="d-flex justify-content-between">
+            <p>{item.color}</p>
+            <p>{item.size}</p>
+            <p>Qty 2</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  {/each}
+{/if}

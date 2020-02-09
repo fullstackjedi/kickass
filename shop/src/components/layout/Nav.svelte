@@ -1,42 +1,10 @@
+<script>
+  import Cartbox from "../ui/Cartbox.svelte";
+</script>
+
 <style>
   .cart-wrapper {
     position: relative;
-  }
-
-  .cart-link:hover + .cart-box {
-    display: block;
-    transform: translateY(20px);
-  }
-
-  .cart-box {
-    position: absolute;
-    background: rebeccapurple;
-    width: 300px;
-    height: 300px;
-    left: -250px;
-    z-index: -1;
-    display: block;
-    transform: translateY(-300px);
-    transition: all 1s;
-  }
-
-  .product-card {
-    width: 90%;
-    margin: 5px auto;
-    display: flex;
-    background: #fff;
-  }
-
-  .product-img {
-    width: 40%;
-  }
-
-  .product-img img {
-    max-width: 100%;
-  }
-
-  .product-details {
-    width: 60%;
   }
 </style>
 
@@ -116,19 +84,9 @@
           1
           <i class="fas fa-cart-arrow-down" />
         </a>
-        <div class="cart-box">
-          <div class="product-card">
-            <div class="product-img">
-              <img
-                src="https://res.cloudinary.com/emmaxio/image/upload/c_crop,h_500,w_500/kickass/products/product-5e6d3af8-53dd-4189-837b-04a0c8cf513e.jpeg"
-                alt="" />
-            </div>
-            <div class="product-details">
-              <p>Product Name</p>
-              <p>#12, 555</p>
-            </div>
-          </div>
-        </div>
+
+        <Cartbox />
+
       </li>
       <li class="nav-item avatar dropdown">
         <a
