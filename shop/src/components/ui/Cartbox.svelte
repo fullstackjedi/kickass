@@ -19,23 +19,6 @@
 </script>
 
 <style>
-  .cart-link:hover + .cart-box {
-    display: block;
-    transform: translateY(20px);
-  }
-
-  .cart-box {
-    position: absolute;
-    background: #fff;
-    width: 300px;
-    height: 300px;
-    left: -250px;
-    z-index: -1;
-    display: block;
-    transform: translateY(-300px);
-    transition: all 1s;
-  }
-
   .product-card {
     width: 90%;
     margin: 5px auto;
@@ -61,19 +44,17 @@
   <p>No Items in your Cart</p>
 {:else}
   {#each cart as item}
-    <div class="cart-box">
-      <div class="product-card">
-        <div class="product-img">
-          <img src={item.cloudURLs[0]} alt="" />
-        </div>
-        <div class="product-details">
-          <p>{item.price}</p>
-          <p>{truncateString(item.name, 15)}</p>
-          <div class="d-flex justify-content-between">
-            <p>{item.color}</p>
-            <p>{item.size}</p>
-            <p>Qty 2</p>
-          </div>
+    <div class="product-card">
+      <div class="product-img">
+        <img src={item.cloudURLs[0]} alt="" />
+      </div>
+      <div class="product-details">
+        <p>{item.price}</p>
+        <p>{truncateString(item.name, 15)}</p>
+        <div class="d-flex justify-content-between">
+          <p>{item.color}</p>
+          <p>{item.size}</p>
+          <p>Qty 2</p>
         </div>
       </div>
     </div>

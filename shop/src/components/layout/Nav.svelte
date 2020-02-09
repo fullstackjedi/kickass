@@ -1,10 +1,34 @@
 <script>
   import Cartbox from "../ui/Cartbox.svelte";
+  import { slide } from "svelte/transition";
+
+  let cartOpen = false;
+
+  function showCart() {
+    cartOpen = !cartOpen;
+  }
 </script>
 
 <style>
   .cart-wrapper {
     position: relative;
+  }
+
+  .cart-box {
+    position: absolute;
+    background: #fff;
+    width: 300px;
+    height: 300px;
+    left: -250px;
+    top: 60px;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .checkout-wrapper {
+    width: 90%;
+    margin: 5px auto;
   }
 </style>
 
@@ -79,17 +103,33 @@
     </form>
 
     <ul class="navbar-nav ml-auto nav-flex-icons">
-      <li class="nav-item cart-wrapper">
-        <a class="nav-link waves-effect waves-light cart-link">
+      <li class="nav-item cart-wrapper" on:click={showCart}>
+        <a href="#" class="nav-link waves-effect waves-light cart-link">
           1
           <i class="fas fa-cart-arrow-down" />
         </a>
 
-        <Cartbox />
+        {#if cartOpen}
+          <div
+            class="cart-box"
+            in:slide={{ duration: 2000 }}
+            out:slide={{ duration: 1000 }}>
+
+            <div class="cart-items">
+              <Cartbox />
+            </div>
+
+            <div class="checkout-wrapper">
+              <button class="btn btn-secondary btn-block">CHECKOUT</button>
+            </div>
+
+          </div>
+        {/if}
 
       </li>
       <li class="nav-item avatar dropdown">
         <a
+          href="#"
           class="nav-link dropdown-toggle"
           id="navbarDropdownMenuLink-55"
           data-toggle="dropdown"
