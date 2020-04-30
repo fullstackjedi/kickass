@@ -20,7 +20,7 @@
     "@ckeditor/ckeditor5-build-classic": "^16.0.0",
     "axios": "^0.19.0",
     "commafy": "0.0.5",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "sirv-cli": "^0.4.4",
     "svelte-dropzone": "^1.0.6",
     "svelte-routing": "^1.4.0"
