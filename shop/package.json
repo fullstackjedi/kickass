@@ -34,6 +34,6 @@
     "rollup-plugin-terser": "^5.2.0",
     "sapper": "^0.27.0",
     "serialize-javascript": ">=2.1.1",
-    "svelte": "^3.0.0"
+    "svelte": "^3.49.0"
   }
 }
