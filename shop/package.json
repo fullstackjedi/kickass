@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "axios": "^0.19.0",
-    "commafy": "0.0.5",
+    "commafy": "0.0.6",
     "compression": "^1.7.1",
     "polka": "next",
     "sirv": "^0.4.0"
